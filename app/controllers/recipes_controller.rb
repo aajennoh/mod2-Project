@@ -26,10 +26,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe.total_cost
-    @recipe.total_gains
-    @recipe.total_cals
-    # @recipe.gluten?
+    @recipe.info_fill
+    @gluten_foods = []
   end
 
   def edit

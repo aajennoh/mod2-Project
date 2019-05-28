@@ -9,10 +9,7 @@ def info_fill
   self.total_cost
   self.total_gains
   self.total_cals
-  self.gluten?
 end
-
-
 
 
 def total_cost
@@ -34,8 +31,7 @@ def total_cals
 end
 
 def gluten?
-  byebug
-  self.foods.gluten.sum >= 1
+  self.foods.select {|food| food.gluten}
 end
 
 

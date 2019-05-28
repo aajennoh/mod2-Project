@@ -2,9 +2,21 @@ show page for food
 <p>
 
 <%=@food.name %>
+<p>
+price
 <%=@food.price %>
+Protien
+<p>
 <%=@food.protein %>
 
-
+<p>
+Calories
 <%=@food.calories %>
+<p>
+Contain Gluten? ->>
 <%=@food.gluten %>
+
+
+<h3><%= link_to "edit", "/recipes/#{@food.id}/edit" %></h3>
+
+<%= button_to "delete", food_path,  method: :delete %>
