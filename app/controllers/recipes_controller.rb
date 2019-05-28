@@ -8,23 +8,27 @@ class RecipesController < ApplicationController
 
   def new
   @recipe = Recipe.new
-  @foods = Food.all
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
-      if @recipe.valid?
-        @recipe.save
-        redirect_to "/recipes/#{@recipe.id}"
-      else
-        flash[:notice] = @recipe.errors.messages
-        redirect_to "/recipes/new"
-      end
+    @recipe = Recipe.create(recipe_params)
+    redirect_to "/recipes/#{@recipe.id}"
+      # if @recipe.valid?
+      #   @recipe.save
+      #   redirect_to "/recipes/#{@recipe.id}"
+      # else
+      #   flash[:notice] = @recipe.errors.messages
+      #   redirect_to "/recipes/new"
+      # end
   end
 
 
   def show
     @recipe = Recipe.find(params[:id])
+    @recipe.total_cost
+    @recipe.total_gains
+    @recipe.total_cals
+    @receipe.gluten?
   end
 
   def edit
@@ -47,7 +51,7 @@ class RecipesController < ApplicationController
 private
 
 def recipe_params
-params.require(:recipe).permit(:name, :description, :total_price, :total_protein, :total_calories, :owner_id )
+params.require(:recipe).permit(:name, :description, :total_price, :total_protein, :total_calories, :owner_id, food_ids:[])
 end
 
 

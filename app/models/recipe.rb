@@ -5,6 +5,16 @@ has_many :foods, through: :recipe_foods
 
 
 
+def info_fill
+  self.total_cost
+  self.total_gains
+  self.total_cals
+  self.gluten?
+end
+
+
+
+
 def total_cost
   total = 0
   self.foods.each {|food| total += food.price }
@@ -26,6 +36,7 @@ end
 def gluten?
   self.foods.gluten.sum >= 1
 end
+
 
 
 
