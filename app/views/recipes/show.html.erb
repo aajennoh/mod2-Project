@@ -4,6 +4,7 @@
   <%end%>
   <%end%>
 
+  <center>
 
 RECIPE NAME
 <%=@recipe.name %>
@@ -41,4 +42,6 @@ Ingredients
 
 <h3><%= link_to "edit", "/recipes/#{@recipe.id}/edit" %></h3>
 
-<%= button_to "delete", recipe_path,  method: :delete %>
+<button type="button" class="btn btn-danger"><%= button_to "delete", recipe_path,  method: :delete %></button>
+
+</center>

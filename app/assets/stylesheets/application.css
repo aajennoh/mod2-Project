@@ -14,10 +14,15 @@
  *= require_self
  */
 
- /* body {
- background: url(/assets/background.jpg) no-repeat center center;
+
+
+
+ body {
+ background: url(/assets/background.jpeg) no-repeat center center;
  background-size: cover;
- height: 600px;} */
+ height: 600px;}
+
+ 
 
 
  @import url(https://fonts.googleapis.com/css?family=Pacifico);
