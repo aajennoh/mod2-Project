@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
   end
 
 
+
   def new
   @recipe = Recipe.new
   end
@@ -28,7 +29,7 @@ class RecipesController < ApplicationController
     @recipe.total_cost
     @recipe.total_gains
     @recipe.total_cals
-    @receipe.gluten?
+    # @recipe.gluten?
   end
 
   def edit

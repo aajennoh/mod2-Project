@@ -1,9 +1,19 @@
+RECIPE NAME
 <%=@recipe.name %>
+<p>
+RECIPE INSTRUCTIONS
 <%=@recipe.description %>
-<%=@recipe.total_price %>
-<%=@recipe.total_protien %>
+<P>
+total price
+<%="$#{@recipe.total_price.round(2)}"%>
+<P>
+total protien
+<%=@recipe.total_protein %>
+<P>
+total calories
 <%=@recipe.total_calories %>
-<%="Created by #{@recipe.user_id.name}"%>
+<P>
+<%="Created by TBD"%>
 
 
 </h2>

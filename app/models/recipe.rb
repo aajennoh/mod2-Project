@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-belongs_to :user
+belongs_to :user, required: false
 has_many  :recipe_foods
 has_many :foods, through: :recipe_foods
 
@@ -34,6 +34,7 @@ def total_cals
 end
 
 def gluten?
+  byebug
   self.foods.gluten.sum >= 1
 end
 
