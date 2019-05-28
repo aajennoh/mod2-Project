@@ -1,0 +1,13 @@
+<%=@recipe.name %>
+<%=@recipe.description %>
+<%=@recipe.total_price %>
+<%=@recipe.total_protien %>
+<%=@recipe.total_calories %>
+<%="Create by #{@recipe.user_id.name}"%>
+
+
+</h2>
+
+<h3><%= link_to "edit", "/recipes/#{@recipe.id}/edit" %></h3>
+
+<%= button_to "delete", "/recipes/#{@recipe.id}/delete",  method: :delete %>

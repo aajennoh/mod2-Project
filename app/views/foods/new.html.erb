@@ -1,0 +1,22 @@
+<% if flash[:notice] %>
+  <h3><%=flash[:notice]%></h3>
+<%end%>
+
+<%=form_for @food do |f|%>
+<%=f.text_field :name%>
+<%=f.number_field :price%>
+<%=f.number_field :protein%>
+<%=f.number_field :calories%>
+GLUTEN FREE????
+<%=f.check_box :gluten%>
+<%=f.submit "create food"%>
+<%end%>
+
+
+
+<!-- <form>
+  <input type=number step=1 /> Step 1 (default)<br />
+  <input type=number step=0.01 /> Step 0.01<br />
+  <input type=number step=any /> Step any<br />
+  <input type=range step=20 /> Step 20<br />
+</form> -->

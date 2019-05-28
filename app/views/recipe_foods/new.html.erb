@@ -1,0 +1,9 @@
+<% if flash[:notice] %>
+  <h3><%=flash[:notice]%></h3>
+<%end%>
+
+
+<form action="/recipe_foods" method="post">
+ <input type="text" name= stuff >
+ <input type="submit" value="Submit Recipe">
+</form>
