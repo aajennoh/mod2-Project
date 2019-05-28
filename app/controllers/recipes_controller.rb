@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
 
   def new
   @recipe = Recipe.new
+  @foods = Food.all
   end
 
   def create

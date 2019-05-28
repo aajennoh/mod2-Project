@@ -3,7 +3,6 @@
 <%end%>
 
 
-
 <%=form_for @recipe do |f|%>
 <%=f.text_field :name%>
 
@@ -17,4 +16,16 @@
 GLUTEN FREE????
 <%=f.check_box :gluten%>
 <%=f.submit "create food"%>
+<%end%>
+
+
+<%=form_for @recipe, url: "/recipe_foods/create" do |f|%>
+Recipe name
+
+<%=f.collection_select :food_id, @foods, :id, :name %>
+food 2
+<%=f.collection_select :food_id, @foods, :id, :name %>
+food 3
+ <%=f.collection_select :food_id, @foods, :id, :name %>
+ <%=submit_tag "new recipe"%>
 <%end%>

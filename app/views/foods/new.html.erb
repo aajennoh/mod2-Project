@@ -3,12 +3,21 @@
 <%end%>
 
 <%=form_for @food do |f|%>
+name
 <%=f.text_field :name%>
-<%=f.number_field :price%>
+<p>
+price
+<%=f.number_field :price, class: :text_field, step: :any%>
+<p>
+protien
 <%=f.number_field :protein%>
+<p>
+calories
 <%=f.number_field :calories%>
-GLUTEN FREE????
+<p>
+contains gluten?
 <%=f.check_box :gluten%>
+<p>
 <%=f.submit "create food"%>
 <%end%>
 

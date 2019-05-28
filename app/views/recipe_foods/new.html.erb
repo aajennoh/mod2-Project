@@ -3,7 +3,14 @@
 <%end%>
 
 
-<form action="/recipe_foods" method="post">
- <input type="text" name= stuff >
- <input type="submit" value="Submit Recipe">
-</form>
+<%=form_for @recipe_food, url: "/recipe_foods/create" do |f|%>
+Recipe name
+<%=f.collection_select :recipe_id, Recipe.all, :id, :name %>
+food 1
+<%=f.collection_select :food_id, Food.all, :id, :name %>
+food 2
+<%=f.collection_select :food_id, Food.all, :id, :name %>
+food 3
+ <%=f.collection_select :food_id, Food.all, :id, :name %>
+ <%=submit_tag "new recipe"%>
+<%end%>

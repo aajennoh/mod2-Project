@@ -10,7 +10,7 @@ def new
 end
 
 def create
-  @food = Food.new(foods_params)
+  @food = Food.new(food_params)
     if @food.valid?
       @food.save
       redirect_to "/foods/#{@food.id}"
@@ -47,7 +47,7 @@ end
 private
 
 def food_params
-params.require(:food).permit(:name, :description, :price, :protien, :calories)
+params.require(:food).permit(:name, :description, :price, :protein, :calories, :gluten)
 end
 
 
