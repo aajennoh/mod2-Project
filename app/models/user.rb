@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-has_many :recipies
+has_many :recipes
 
 
 
