@@ -1,6 +1,6 @@
-<ul class="list-group list-group-flush">
+<center>
 <% @foods.each do |food| %>
-
-<li class="list-group-item"><%=link_to food.name, "/foods/#{food.id}" %></li>
+<%=link_to food.name, "/foods/#{food.id}" %>
+<p>
 <%end%>
-</ul>
+</center>

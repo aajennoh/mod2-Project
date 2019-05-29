@@ -26,9 +26,9 @@ Ingredients
 
 <p>
 <% if @gluten_foods.length > 0 %>
-<p class="rainbow" >   <%= "WARNING I CONTAIN GLUTEN" %>
+<p class="rainbow"> <%= "WARNING I CONTAIN GLUTEN" %>
   <p>
-<font color="red"><%= "#{@gluten_foods.join(", ")}" %></font>
+<font color="red", size=10><%= "#{@gluten_foods.join(", ")}" %></font>
   <%end%>
 
 <P>
@@ -39,8 +39,9 @@ Ingredients
 
 
 </h2>
-
-<h3><%= link_to "edit", "/recipes/#{@recipe.id}/edit" %></h3>
+<p>
+<button type="button" class="btn btn-warning"><%= button_to "edit", "/recipes/#{@recipe.id}/edit",  method: :get %></button>
+<p>
 
 <button type="button" class="btn btn-danger"><%= button_to "delete", recipe_path,  method: :delete %></button>
 

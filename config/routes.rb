@@ -4,6 +4,8 @@ resources :foods
 resources :recipes
 resources :users
 
+get "/welcome", to: "users#welcome"
+
 # get "/tester/", to: "workouts#index"
 #
 # get "/workouts/new", to: "workouts#new"

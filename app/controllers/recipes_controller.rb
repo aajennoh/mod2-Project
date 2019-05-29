@@ -36,7 +36,8 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.update(recipes_params)
+    @recipe.delete
+    @recipe = Recipe.create(recipe_params)
     redirect_to "/recipes/#{@recipe.id}"
   end
 
