@@ -1,11 +1,8 @@
 class RecipesController < ApplicationController
 
-
   def index
     @recipes  = Recipe.all
   end
-
-
 
   def new
   @recipe = Recipe.new
@@ -13,6 +10,9 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(recipe_params)
+    if session[:user_id] 
+        @recipe.user_id = session[:user_id] 
+        @recipe.save
     redirect_to "/recipes/#{@recipe.id}"
       # if @recipe.valid?
       #   @recipe.save
@@ -21,6 +21,7 @@ class RecipesController < ApplicationController
       #   flash[:notice] = @recipe.errors.messages
       #   redirect_to "/recipes/new"
       # end
+    end
   end
 
 

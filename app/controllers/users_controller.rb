@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create, :destroy]
 
   def index
     @users = User.all
@@ -6,6 +7,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_recipes = []
+    @recipes = Recipe.find_by(user_id: params[:id])
+    @user_recipes << @recipes
   end
 
   def new
@@ -14,22 +18,25 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-  if @user.valid?
-    @user.save
-    redirect_to "/users/#{@user.id}"
-  else
-    flash[:notice] = @user.errors.messages
-    redirect_to "/users/new"
-  end
+    if @user.valid?
+      @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      flash.now[:notice] = @user.errors.messages
+      render :new
+    end
   end
 
   def edit
   end
 
-  def create
-  end
 
-  def destroy
+  def destroy # DELETE request /users/:id
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:notice] = "Your account has been deleted."
+    redirect_to new_user_path
   end
 
   def welcome
@@ -39,11 +46,8 @@ class UsersController < ApplicationController
 private
 
 def user_params
-params.require(:user).permit(:name)
+params.require(:user).permit(:username, :password)
 end
-
-
-
 
 
 end
