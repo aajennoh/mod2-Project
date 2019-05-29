@@ -4,7 +4,6 @@ def index
   @foods = Food.all
 end
 
-
 def new
   @food = Food.new
 end
@@ -13,20 +12,19 @@ def create
   @food = Food.new(food_params)
     if @food.valid?
       @food.save
-      redirect_to "/foods/#{@food.id}"
+      redirect_to @food
     else
       flash[:notice] = @food.errors.messages
-      redirect_to "/foods/new"
+      render :new
     end
 end
-
 
 def show
   @food = Food.find(params[:id])
 end
 
 def edit
-  @food = Food.find_by(params[:id])
+  @food = Food.find(params[:id])
 end
 
 def update
@@ -41,7 +39,6 @@ def destroy
   redirect_to "/foods"
 
 end
-
 
 
 private

@@ -1,0 +1,22 @@
+<% if flash[:notice] %>
+  <h3><%=flash[:notice]%></h3>
+<%end%>
+
+<%=form_for @food do |f|%>
+name
+<%=f.text_field :name%>
+<p>
+price
+<%=f.number_field :price, class: :text_field, step: :any%>
+<p>
+protein
+<%=f.number_field :protein%>
+<p>
+calories
+<%=f.number_field :calories%>
+<p>
+contains gluten?
+<%=f.check_box :gluten%>
+<p>
+<%=f.submit "Update Ingredient"%>
+<%end%>
