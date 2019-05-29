@@ -14,10 +14,18 @@
  *= require_self
  */
 
- /* body {
- background: url(/assets/background.jpg) no-repeat center center;
+
+
+ #locator { position: absolute; visibility: visible; left: 400px; top: 225px; }
+ #locator2 { position: absolute; visibility: visible; left: 105px; top: 150px; }
+
+
+
+ body {
+ background: url(/assets/background.jpeg) no-repeat center center;
  background-size: cover;
- height: 600px;} */
+ height: 750px;}
+
 
 
  @import url(https://fonts.googleapis.com/css?family=Pacifico);

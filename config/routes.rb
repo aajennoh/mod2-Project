@@ -3,6 +3,13 @@ Rails.application.routes.draw do
 resources :foods
 resources :recipes
 resources :users
+
+get "/welcome", to: "users#welcome"
+
+
+
+
+
 resources :recipe_foods
 
 get '/login', to: 'sessions#new', as: 'login'

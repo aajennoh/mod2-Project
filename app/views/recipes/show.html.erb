@@ -1,3 +1,11 @@
+<%if @recipe.gluten? %>
+<% @recipe.gluten?.each do |food|%>
+  <% @gluten_foods << food.name %>
+  <%end%>
+  <%end%>
+
+  <center>
+
 RECIPE NAME
 <%=@recipe.name %>
 <p>
@@ -8,16 +16,33 @@ total price
 <%="$#{@recipe.total_price.round(2)}"%>
 <P>
 total protien
-<%=@recipe.total_protein %>
+<%=@recipe.total_protein %> grams
 <P>
 total calories
 <%=@recipe.total_calories %>
+<p>
+Ingredients
+<%=@recipe.foods.map {|food| food.name}.join(", ")%>
+
+<p>
+<% if @gluten_foods.length > 0 %>
+<p class="rainbow"> <%= "WARNING I CONTAIN GLUTEN" %>
+  <p>
+<font color="red", size=10><%= "#{@gluten_foods.join(", ")}" %></font>
+  <%end%>
+
 <P>
+
+
+
 <%="Created by TBD"%>
 
 
 </h2>
+<p>
+<button type="button" class="btn btn-warning"><%= button_to "edit", "/recipes/#{@recipe.id}/edit",  method: :get %></button>
+<p>
 
-<h3><%= link_to "edit", "/recipes/#{@recipe.id}/edit" %></h3>
+<button type="button" class="btn btn-danger"><%= button_to "delete", recipe_path,  method: :delete %></button>
 
-<%= button_to "delete", "/recipes/#{@recipe.id}/delete",  method: :delete %>
+</center>

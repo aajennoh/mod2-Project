@@ -27,10 +27,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe.total_cost
-    @recipe.total_gains
-    @recipe.total_cals
-    # @recipe.gluten?
+    @recipe.info_fill
+    @gluten_foods = []
   end
 
   def edit
@@ -39,7 +37,8 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.update(recipes_params)
+    @recipe.delete
+    @recipe = Recipe.create(recipe_params)
     redirect_to "/recipes/#{@recipe.id}"
   end
 
@@ -53,7 +52,7 @@ class RecipesController < ApplicationController
 private
 
 def recipe_params
-params.require(:recipe).permit(:name, :description, :total_price, :total_protein, :total_calories, :owner_id, food_ids:[])
+params.require(:recipe).permit(:name, :description, :total_price, :total_protein, :total_calories, :user_id, food_ids:[], foods_attributes: [:id, :name, :_destroy])
 end
 
 

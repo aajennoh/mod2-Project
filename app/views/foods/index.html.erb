@@ -1,5 +1,6 @@
-
+<center>
 <% @foods.each do |food| %>
-
-<li><%=link_to food.name, "/foods/#{food.id}" %></li>
+<%=link_to food.name, "/foods/#{food.id}" %>
+<p>
 <%end%>
+</center>

@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html>
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3ba021;
+  border: 3px solid pink;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #bf59b3;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="/welcome">Home</a></li>
+  <li><a href="/recipes">All Recipes</a></li>
+  <li><a href="/recipes/new">New Recipe</a></li>
+  <li><a href="/foods">All Ingredients</a></li>
+  <li><a href="/foods/new">Add Ingredient</a></li>
+</ul>
+
   <head>
     <title>Food</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
+
     <%= yield %>
   </body>
 </html>

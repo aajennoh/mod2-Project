@@ -39,6 +39,10 @@ class UsersController < ApplicationController
     redirect_to new_user_path
   end
 
+  def welcome
+    render "/welcome"
+  end
+
 private
 
 def user_params
