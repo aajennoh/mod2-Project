@@ -13,6 +13,7 @@ def info_fill
 end
 
 
+
 def total_cost
   total = 0
   self.foods.each {|food| total += food.price }
