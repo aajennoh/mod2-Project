@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
 
   def new
   @recipe = Recipe.new
+  @foods = Food.all
   end
 
   def create
@@ -53,7 +54,7 @@ class RecipesController < ApplicationController
 private
 
 def recipe_params
-params.require(:recipe).permit(:name, :description, :total_price, :total_protein, :total_calories, :user_id, foods_attributes:[:name,:_destroy, :id] , food_ids:[])
+params.require(:recipe).permit(:name, :description, :total_price, :total_protein, :total_calories, :user_id, :catagory, foods_attributes:[:name,:_destroy, :id] , food_ids:[])
 end
 
 

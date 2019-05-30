@@ -18,6 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'nested_form_fields'
 
 gem 'jquery-rails'
+gem 'simple_form'
 
 
 # Use CoffeeScript for .coffee assets and views
