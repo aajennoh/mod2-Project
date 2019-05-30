@@ -7,14 +7,11 @@ class RecipeFoodsController < ApplicationController
 
 
   def create
+   @recipe = Recipe.find(params[:recipe_id])
 
-    # byebug
-    #  [{id: 1}, {id: 3}, {id: 6}, {id: nil}]
-    #  @recipe = Recipe.find(params[:recipe_id])
-    #
-    #  params[:foods].select { |f| f.id }.each do |food|
-    #   RecipeFood.create(food_id: food["id"], recipe_id: @recipe.id}
-    #  end
+     params[:foods].select { |f| f.id }.each do |food|
+      RecipeFood.create(food_id: food["id"], recipe_id: @recipe.id}
+     end
   end
 
 

@@ -14,9 +14,9 @@ ActiveRecord::Schema.define(version: 2019_05_28_154140) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.float "price"
-    t.integer "protein"
-    t.integer "calories"
+    t.float "price", default: 0.0
+    t.integer "protein", default: 0
+    t.integer "calories", default: 0
     t.boolean "gluten"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_154140) do
   create_table "recipe_foods", force: :cascade do |t|
     t.integer "recipe_id"
     t.integer "food_id"
+    t.integer "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_154140) do
     t.string "name"
     t.text "description"
     t.float "total_price"
+    t.string "catagory"
     t.integer "total_protein"
     t.integer "total_calories"
     t.integer "user_id"
