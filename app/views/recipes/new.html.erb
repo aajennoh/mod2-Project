@@ -11,19 +11,20 @@
   -->
 
 
-<%= form_for @recipe do |f| %>
-        <%= f.label "Name" %>
-        <%= f.text_field :name %>
-        <p><%= f.label "Description" %>
-        <%= f.text_area :description %>
-       <%= f.collection_check_boxes :food_ids, Food.all, :id, :name %>
-       <p>
-          <%= f.submit %>
-<% end %>
 
 <p>
+  <%= form_for @recipe do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
+  <%= f.select :catagory, collection: ["breakfast", "lunch"], prompt: "Select the catagory "  %>
+    <p><%= f.label "Description" %>
+    <%= f.text_area :description %>
 
+      <p>
 
+      <%=f.submit%>
+
+      <%end%>
 
 
 </div>
