@@ -1,14 +1,19 @@
+<h1>Welcome <%= @user.first_name %></h1>
+<h1>Your Recipes</h1>
 
-<h1>Welcome </h1>
-<%= @user.first_name %>
 
   <%if @recipes%>
   <% @user_recipes.each do |recipe| %>
   <%= link_to recipe.name, recipe_path(recipe) %>
-  <p>
   <% end %>
 <% end %>
 
+
+
+
+<br>
+<br>
+<br>
 
 <% if current_user == @user %>
   <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>

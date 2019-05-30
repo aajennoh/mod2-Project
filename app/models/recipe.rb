@@ -5,14 +5,11 @@ has_many :foods, through: :recipe_foods
 accepts_nested_attributes_for :foods, allow_destroy: true
 
 
-
 def info_fill
   self.total_cost
   self.total_gains
   self.total_cals
 end
-
-
 
 def total_cost
   total = 0

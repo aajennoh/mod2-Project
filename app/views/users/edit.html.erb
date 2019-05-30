@@ -1,7 +1,4 @@
-<center>
-<div class="rainbow">
-Sign-Up
-</div>
+<h1>Update Profile</h1>
 
 <h4><%= flash[:notice] %></h4>
 
@@ -11,11 +8,8 @@ Sign-Up
   <p><%= f.text_field :username %></p>
   <%= f.label :password %>
   <p> <%= f.password_field :password %></p>
-  <p><%= f.submit "Sign-Up"%></p>
+  <p><%= f.submit "Update Profile"%></p>
 <% end %>
 <br>
 <br>
-
-  Already a Member of the KOOL CLUB?
-  <p><%= button_to "Login", login_path, method: :get %></p>
 </div>

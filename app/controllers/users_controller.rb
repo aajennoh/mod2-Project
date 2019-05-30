@@ -29,6 +29,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @user = User.create(user_params)
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      flash.now[:notice] = @user.errors.messages
+      render :edit
+    end
   end
 
 

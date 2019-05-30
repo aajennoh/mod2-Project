@@ -1,0 +1,26 @@
+<h1>Menu</h1>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
+<h4>Your Recipes: </h4>
+
+<ol>
+  <% @items.each do |item| %>
+    <li class="cart"><%= item.name %></li>
+  <% end %>
+</ol>
+
+
+<hr>
+
+<% @recipes.each do |recipe| %>
+  <ul>
+    <li class="cart">
+      <%= link_to recipe.name, recipe_path(recipe) %>
+      $<%= recipe.total_price %>
+      <%= button_to "Add To Budget", "/cart", {method: :patch, params: {recipe_id: recipe.id} }%>
+    </li>
+  </ul>
+<% end %>

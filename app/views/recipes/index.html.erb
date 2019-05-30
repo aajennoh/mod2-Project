@@ -1,4 +1,13 @@
 <center>
+
+<h4 class="title">Budget:</h4>
+    <%=form_tag budget_path, method: :get do %>
+        <%=number_field_tag(:search, params[:search])%>
+        <%=submit_tag "Submit"%>
+    <%end%>
+
+<br>
+<h1>List of all Recipes:</h1>
 <% @recipes.each do |recipe| %>
 <%=link_to recipe.name, "/recipes/#{recipe.id}" %>
 <p>

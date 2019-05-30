@@ -29,18 +29,18 @@ Ingredients
 
 <p>
 <% if @gluten_foods.length > 0 %>
-<p class="rainbow"> <%= "WARNING I CONTAIN GLUTEN" %>
-  <p>
+<p class="rainbow"> <%= "WARNING I CONTAIN GLUTEN" %></p>
 <font color="red", size=10><%= "#{@gluten_foods.join(", ")}" %></font>
-  <%end%>
+  <% end %>
+
 
 <P>
 
 
 
 
+Created by: <%= @recipe.user.first_name %>
 
-<%="Created by TBD"%>
 
 
 </h2>

@@ -13,33 +13,48 @@
  *= require_tree .
  *= require_self
  */
-
-
-
- #locator { position: absolute; visibility: visible; left: 400px; top: 225px; }
- #locator2 { position: absolute; visibility: visible; left: 105px; top: 150px; }
-
-
-
- body {
- background: url(/assets/background.jpeg) no-repeat center center;
- background-size: cover;
- height: 750px;}
-
-
+ #locator { position: absolute; visibility: visible; left: 470px; top: 370px; }
+ #locator2 { position: absolute; visibility: visible; left: 200px; top: 280px; }
 
  @import url(https://fonts.googleapis.com/css?family=Pacifico);
-  @import url('https://fonts.googleapis.com/css?family=Anton');
+ @import url('https://fonts.googleapis.com/css?family=Anton');
+ 
+ 
+ ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #3ba021;
+  border: 3px solid pink;
+}
+li a {
+  display: block;
+  color: yellow;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #bf59b3;
+}
+li.logout {
+  float: right;
+}
 
-  h1,h2{
-    text-align:center;
-  }
+body {
+ background: url(/assets/background.jpeg) no-repeat center center;
+ background-size: cover;
+ height: 750px;
+ background-color: #ffffff;
+}
 
-  h1{
-    color:rgba(100, 50, 255, .8);
-    font-family: 'Pacifico',
-    color:#212121;
-  }
+h1 {
+  color:rgba(100, 50, 255, .8);
+  font-family: 'Pacifico',
+  color: #212121;
+}
+
 
   .rainbow {
 
@@ -102,10 +117,7 @@
   	100%{color: orange;}
   }
 
-  body{
-    background-color: #25cce4;
-  }
-
+ 
   .container{
     background-color:#E0F2F1;
     padding:10px;
