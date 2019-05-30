@@ -1,3 +1,4 @@
+<center>
 <h1>Menu</h1>
 
 <% if flash[:notice] %>
@@ -16,11 +17,11 @@
 <hr>
 
 <% @recipes.each do |recipe| %>
-  <ul>
+
     <li class="cart">
       <%= link_to recipe.name, recipe_path(recipe) %>
       $<%= recipe.total_price %>
       <%= button_to "Add To Budget", "/cart", {method: :patch, params: {recipe_id: recipe.id} }%>
     </li>
-  </ul>
 <% end %>
+</center>

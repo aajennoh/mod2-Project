@@ -12,8 +12,8 @@ RECIPE NAME
 RECIPE INSTRUCTIONS
 <%=@recipe.description %>
 <p>
-RECIPE Catagory
-<%=@recipe.catagory%>
+RECIPE Category
+<%=@recipe.category%>
 <P>
 total price
 <%="$#{@recipe.total_price.round(2)}"%>
@@ -38,8 +38,7 @@ Ingredients
 
 
 
-
-Created by: <%= @recipe.user.first_name %>
+Created by: <%= @recipe.user.username %>
 
 
 
