@@ -13,13 +13,14 @@
  *= require_tree .
  *= require_self
  */
- #locator { position: absolute; visibility: visible; left: 470px; top: 370px; }
- #locator2 { position: absolute; visibility: visible; left: 200px; top: 280px; }
+ #locator { position: absolute; visibility: visible; left: 500px; top: 225px; }
+ #locator2 { position: absolute; visibility: visible; left: 205px; top: 150px; }
+
 
  @import url(https://fonts.googleapis.com/css?family=Pacifico);
  @import url('https://fonts.googleapis.com/css?family=Anton');
- 
- 
+
+
  ul.nav {
   list-style-type: none;
   margin: 0;
@@ -117,7 +118,7 @@ h1 {
   	100%{color: orange;}
   }
 
- 
+
   .container{
     background-color:#E0F2F1;
     padding:10px;

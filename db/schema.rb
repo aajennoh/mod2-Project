@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_154140) do
     t.string "name"
     t.text "description"
     t.float "total_price"
-    t.string "catagory"
+    t.string "category"
     t.integer "total_protein"
     t.integer "total_calories"
     t.integer "user_id"

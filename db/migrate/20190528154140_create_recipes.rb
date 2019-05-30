@@ -4,7 +4,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :description
       t.float :total_price
-      t.string :catagory
+      t.string :category
       t.integer :total_protein
       t.integer :total_calories
       t.integer :user_id
