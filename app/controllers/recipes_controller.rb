@@ -6,12 +6,14 @@ class RecipesController < ApplicationController
 
   def new
   @recipe = Recipe.new
+  @foods = Food.all
   end
 
   def create
     @recipe = Recipe.create(recipe_params)
-    if session[:user_id] 
-        @recipe.user_id = session[:user_id] 
+    byebug
+    if session[:user_id]
+        @recipe.user_id = session[:user_id]
         @recipe.save
     redirect_to "/recipes/#{@recipe.id}"
       # if @recipe.valid?
@@ -57,7 +59,8 @@ class RecipesController < ApplicationController
 private
 
 def recipe_params
-params.require(:recipe).permit(:name, :description, :budget, :total_price, :total_protein, :total_calories, :user_id, food_ids:[], foods_attributes: [:id, :name, :_destroy])
+
+params.require(:recipe).permit(:name, :description, :total_price, :total_protein, :total_calories, :user_id, :catagory, foods_attributes:[:name,:_destroy, :id] , food_ids:[])
 end
 
 
