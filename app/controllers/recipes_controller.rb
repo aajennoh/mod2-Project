@@ -11,7 +11,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.create(recipe_params)
-    byebug
+    
     if session[:user_id]
         @recipe.user_id = session[:user_id]
         @recipe.save
@@ -35,7 +35,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.info_fill
     @gluten_foods = []
-    
+
   end
 
   def edit

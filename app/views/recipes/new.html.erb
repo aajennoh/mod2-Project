@@ -19,6 +19,7 @@
   <%= f.select :category, collection: ["breakfast", "lunch"], prompt: "Select the category "  %>
     <p><%= f.label "Description" %>
     <%= f.text_area :description %>
+    <%= f.collection_check_boxes :food_ids, Food.all, :id, :name %>
 
       <p>
 
