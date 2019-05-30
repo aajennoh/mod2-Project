@@ -1,9 +1,10 @@
 <h1>Login</h1>
+<br>
 
 <h4><%= flash[:notice] %></h4>
 
 <!-- form will POST to '/login' -->
-<center>
+<div class="form">
 <%= form_tag(login_path) do %>
   <%= label_tag :username %>
   <p><%= text_field_tag :username %><p>
@@ -15,5 +16,4 @@
 <% end %>
   <p>Not a Member?</p>
   <p><%= button_to "Sign-up", new_user_path, method: :get %></p>
-
-</center>
+</div>

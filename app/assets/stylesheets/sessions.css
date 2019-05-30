@@ -1,0 +1,14 @@
+h1{
+    color:rgba(100, 50, 255, .8);
+    font-family: 'Pacifico';
+    color: #212121;
+    text-align: center;
+}
+h4{
+    text-align: center;
+    color: red;
+}
+
+div.form {
+    text-align: center;
+}
