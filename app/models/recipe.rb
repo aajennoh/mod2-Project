@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
 belongs_to :user, required: false
 has_many  :recipe_foods
 has_many :foods, through: :recipe_foods
-# accepts_nested_attributes_for :foods, :allow_destroy => true
+accepts_nested_attributes_for :foods, allow_destroy: true
 
 
 
