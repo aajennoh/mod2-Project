@@ -24,9 +24,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_recipes = []
-    @recipes = Recipe.find_by(user_id: params[:id])
-    @user_recipes << @recipes
-  end
+    Recipe.where(user_id: params[:id]).each {|rec| @user_recipes << rec}
+    end
 
   def edit
     @user = User.find(params[:id])
