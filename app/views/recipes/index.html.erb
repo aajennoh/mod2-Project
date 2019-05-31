@@ -1,5 +1,5 @@
 <center>
-<h3 class="rainbow">Budget Filter:</h3> 
+<h3 class="rainbow">Budget Filter:</h3>
     <%=form_tag budget_path, method: :get do %>
         <%=number_field_tag(:search, params[:search])%>
         <%=submit_tag "Submit"%>
@@ -11,4 +11,15 @@
 <% @recipes.each do |recipe| %>
 <p><%=link_to recipe.name, "/recipes/#{recipe.id}" %></p>
 <%end%>
+
+
+
+
+<button type="button" class="btn btn-warning"><%= button_to "Sort by Breakfast", "/recipes/index_breakfast",  method: :get %></button>
+<br>
+<br>
+<button type="button" class="btn btn-warning"><%= button_to "Sort by Snack", "/recipes/index_snack",  method: :get %></button>
+<br>
+<br>
+<button type="button" class="btn btn-warning"><%= button_to "Sort by Dinner", "/recipes/index_dinner",  method: :get %></button>
 </center>
