@@ -6,6 +6,13 @@
 Selected Recipes:
 </h1>
 
+<p>Subtotal: 
+<% counter = 0 %>
+<% @items.each do |item| %>
+<% counter += item.total_price %>
+<% end %>
+<%= counter %>
+</p>
 <ol>
   <% @items.each do |item| %>
     <li><%= item.name %></li>
@@ -13,14 +20,6 @@ Selected Recipes:
      <%= button_to "Delete From Cart", "/cart", {method: :delete, params: {recipe_id: item.id} } %>
   <% end %>
 </ol>
-
-
-<% counter = 0 %>
-<% @items.each do |item| %>
-<% counter += item.total_price %>
-<% end %>
-<%= counter %>
-
 
 
 <hr>
