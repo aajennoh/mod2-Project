@@ -5,22 +5,39 @@
 
 <div>
   <%= form_for @recipe do |f| %>
-    <p class="rainbow"><%= f.label "Name" %></p>
+    <%= f.label "Name" %>
     <p><%= f.text_field :name %></p>
     <br>
-    <p class="rainbow"><%= f.label "Category" %></p>
-    <p><%= f.select :category, collection: ["breakfast", "lunch"], prompt: "Select the category "  %></p>
-    <br>
-    <p class="rainbow"><%= f.label "Instructions" %></p>
+    <%= f.label "Description" %>
     <p><%= f.text_area :description %></p>
-    <p><%= f.collection_check_boxes :food_ids, Food.all, :id, :name %></p>
-    <%=f.submit%>
-  <%end%>
-</div>
 
-<style>
-input[type=text] {
-  border: 2px solid red;
-  border-radius: 4px;
-}
-</style>
+    <%= f.label "Category" %>
+    <p><%= f.select :category, Category: ["breakfast", "snack", "dinner"], select: "Select" %></p>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    <%= f.label "Quantity" %>
+    <%= number_field_tag "amount_1"%>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    <%= f.label "Quantity" %>
+    <%= number_field_tag "amount_2"%>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    <%= f.label "Quantity" %>
+    <%= number_field_tag "amount_3"%>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    Quanity
+    <%= number_field_tag "amount_4"%>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    Quanity
+    <%= number_field_tag "amount_5"%>
+
+  <br>
+  <br>
+  <br>
+
+
+  <%= submit_tag "Submit"%>
+<%end%>

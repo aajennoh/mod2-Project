@@ -13,10 +13,11 @@ Selected Recipes:
 <% end %>
 <%= counter %>
 </p>
+
 <ol>
   <% @items.each do |item| %>
     <li><%= item.name %></li>
-     $ <%= item.total_price %>
+     $ <%= item.total_price.round(2) %>
      <%= button_to "Delete From Cart", "/cart", {method: :delete, params: {recipe_id: item.id} } %>
   <% end %>
 </ol>
@@ -28,7 +29,7 @@ Selected Recipes:
 <% @recipes.map do |recipe| %>
 
   <p class="cart"><%= link_to recipe.name, recipe_path(recipe) %></p>
-  <p class="cart">$<%= recipe.total_price %></p>
+  <p class="cart">$<%= recipe.total_price.round(2) %></p>
   <p class="cart"><%= button_to "Add To Budget", "/cart", {method: :patch, params: {recipe_id: recipe.id, search: recipe.total_price} }%></p>
 <% end %>
 </ol>
