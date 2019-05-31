@@ -9,9 +9,9 @@ Selected Recipes:
 <p>Subtotal: 
 <% counter = 0 %>
 <% @items.each do |item| %>
-<% counter += item.total_price %>
+<% counter += item.total_price.round(2) %>
 <% end %>
-<%= counter %>
+<%= counter.round(2) %>
 </p>
 
 <ol>

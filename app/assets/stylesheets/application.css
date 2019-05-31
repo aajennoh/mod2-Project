@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- #locator { position: absolute; visibility: visible; left: 500px; top: 225px; }
- #locator2 { position: absolute; visibility: visible; left: 205px; top: 150px; }
+ #locator { position: absolute; visibility: visible; left: 655px; top: 225px; }
+ #locator2 { position: absolute; visibility: visible; left: 385px; top: 150px; }
 
 
  @import url(https://fonts.googleapis.com/css?family=Pacifico);
@@ -41,6 +41,12 @@ li a:hover {
 }
 li.logout {
   float: right;
+}
+
+.fix {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
 }
 
 body {
