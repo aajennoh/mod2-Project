@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
   end
 
   def create
+
     @recipe = Recipe.new(recipe_params)
     if @recipe.valid?
       session[:user_id]
@@ -20,6 +21,25 @@ class RecipesController < ApplicationController
     else
        flash[:notice] = @recipe.errors.messages
        redirect_to "/recipes/new"
+      # if @recipe.valid?
+      #   @recipe.save
+      #   redirect_to "/recipes/#{@recipe.id}"
+      # else
+      #   flash[:notice] = @recipe.errors.messages
+      #   redirect_to "/recipes/new"
+      # end
+
+
+#       def create
+#
+#   byebug
+#    [{id: 1}, {id: 3}, {id: 6}, {id: nil}]
+#    @recipe = Recipe.find(params[:recipe_id])
+#
+#    params[:foods].select { |f| f.id }.each do |food|
+#     RecipeFood.create(food_id: food["id"], recipe_id: @recipe.id}
+#    end
+# end
     end
   end
 
@@ -61,6 +81,7 @@ private
 def recipe_params
 
 params.require(:recipe).permit(:name, :search, :description, :total_price, :total_protein, :total_calories, :user_id, :category, foods_attributes:[:name,:_destroy, :id] , food_ids:[])
+
 end
 
 
