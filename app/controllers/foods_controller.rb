@@ -29,7 +29,7 @@ end
 
 def update
   @food = Food.find(params[:id])
-  @food.update(foods_params)
+  @food.update(food_params)
   redirect_to "/foods/#{@food.id}"
 
 end

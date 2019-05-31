@@ -23,7 +23,6 @@ class ApplicationController < ActionController::Base
     cart << item_id
   end
 
-
   # method to add a recipe to a cart
   def see_the_items
     @items = Recipe.find(cart)
