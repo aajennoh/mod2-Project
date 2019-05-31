@@ -62,11 +62,11 @@ class RecipesController < ApplicationController
   def budget
     @recipes = Recipe.search(params[:search])
     see_the_items
-
   end
 
   def show
     @recipe = Recipe.find(params[:id])
+    @recipe.info_fill
     @gluten_foods = []
   end
 
@@ -76,8 +76,7 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find(params[:id])
-    @recipe.delete
-    @recipe = Recipe.create(recipe_params)
+    @recipe = Recipe.update(recipe_params)
     redirect_to "/recipes/#{@recipe.id}"
   end
 
@@ -90,10 +89,6 @@ class RecipesController < ApplicationController
     redirect_to "/recipes"
 
   end
-
-
-
-
 
 
 private

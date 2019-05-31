@@ -3,28 +3,29 @@
   <% @gluten_foods << food.name %>
   <%end%>
 <%end%>
+
 <div>
-<p class="recipe">>Recipe Name</p>
-<p><%=@recipe.name %></p>
-
-<p>Recipe Description</p>
-<p><%=@recipe.description %></p>
-
+<h3><%=@recipe.name %></h3>
+<br>
+<!-- >style="border:3px; border-style:solid; border-color:#e8b4b4; padding: 1em;"> -->
+Recipe Description<br><%=@recipe.description %></p>
+<br>
 <p>Recipe Category</p>
-<%=@recipe.category%>
-
+<p><%=@recipe.category%></p>
+<br>
 <p>Recipe Price</p>
-<p><%="$#{@recipe.total_price.round(2)}"%></p>
 
+<p><%="$#{@recipe.total_price.round(2)}"%></p>
+<br>
 <p>Recipe Protein</p>
 <p><%=@recipe.total_protein %> grams</p>
-
+<br>
 <p>Recipe Calories</p>
 <p><%=@recipe.total_calories %></p>
-
+<br>
 <p>Recipe Ingredients</p>
 <p><%=@recipe.foods.map {|food| food.name}.join(", ")%></p>
-
+<br>
 <% if @gluten_foods.length > 0 %>
 <p class="rainbow", size=5> <%= "WARNING I CONTAIN GLUTEN" %></p>
 <font color="red", size=10><%= "#{@gluten_foods.join(", ")}" %></font>
