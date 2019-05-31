@@ -1,0 +1,6 @@
+
+<h1 class="recipe">List of all Dinner Recipes:</h1>
+<% @recipes.each do |recipe| %>
+<p><%=link_to recipe.name, "/recipes/#{recipe.id}" %></p>
+<%end%>
+</center>

@@ -1,5 +1,21 @@
 class RecipesController < ApplicationController
 
+
+    def breakfast
+      @recipes = Recipe.where(category: "breakfast")
+      render "/recipes/index_breakfast"
+    end
+
+    def snack
+      @recipes = Recipe.where(category: "snack")
+      render "/recipes/index_breakfast"
+    end
+
+    def dinner
+      @recipes = Recipe.where(category: "dinner")
+      render "/recipes/index_breakfast"
+    end
+
   def index
     @recipes = Recipe.all
   end
@@ -74,6 +90,10 @@ class RecipesController < ApplicationController
     redirect_to "/recipes"
 
   end
+
+
+
+
 
 
 private

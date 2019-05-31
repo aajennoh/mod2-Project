@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
 
+  #sorting index
+  get "/recipes/index_breakfast", to: "recipes#breakfast"
+  
+  get "/recipes/index_snack", to: "recipes#snack"
+
+  get "/recipes/index_dinner", to: "recipes#dinner"
+
+
+
 
 get "/recipes/budget", to: "recipes#budget", as: "budget"
 patch '/cart', to:"cart#update"
@@ -13,6 +22,7 @@ resources :foods
 resources :recipes
 resources :users
 resources :recipe_foods
+
 
 
 
