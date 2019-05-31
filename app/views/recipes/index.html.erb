@@ -1,5 +1,5 @@
 <center>
-<h3 class="rainbow">Budget Calculator:</h3> Enter your budget
+<h3 class="rainbow">Budget Filter:</h3> 
     <%=form_tag budget_path, method: :get do %>
         <%=number_field_tag(:search, params[:search])%>
         <%=submit_tag "Submit"%>
@@ -7,7 +7,7 @@
 
 <br>
 
-<h1 class="rainbow">List of all Recipes:</h1>
+<h1 class="recipe">List of all Recipes:</h1>
 <% @recipes.each do |recipe| %>
 <p><%=link_to recipe.name, "/recipes/#{recipe.id}" %></p>
 <%end%>

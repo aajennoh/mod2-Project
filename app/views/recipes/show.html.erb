@@ -4,29 +4,29 @@
   <%end%>
 <%end%>
 <div>
-<p class="rainbow">Recipe Name</p>
+<p class="recipe">>Recipe Name</p>
 <p><%=@recipe.name %></p>
 
-<p class="rainbow">Recipe Description</p>
+<p ">Recipe Description</p>
 <p><%=@recipe.description %></p>
 
-<p class="rainbow">Recipe Category</p>
+<p >Recipe Category</p>
 <%=@recipe.category%>
 
-<p class="rainbow">Recipe Price</p>
+<p >Recipe Price</p>
 <p><%="$#{@recipe.total_price.round(2)}"%></p>
 
-<p class="rainbow">Recipe Protein</p>
+<p >Recipe Protein</p>
 <p><%=@recipe.total_protein %> grams</p>
 
-<p class="rainbow">Recipe Calories</p>
+<p>Recipe Calories</p>
 <p><%=@recipe.total_calories %></p>
 
-<p class="rainbow">Recipe Ingredients</p>
+<p ">Recipe Ingredients</p>
 <p><%=@recipe.foods.map {|food| food.name}.join(", ")%></p>
 
 <% if @gluten_foods.length > 0 %>
-<p class="rainbow"> <%= "WARNING I CONTAIN GLUTEN" %></p>
+<p class="rainbow", size=5> <%= "WARNING I CONTAIN GLUTEN" %></p>
 <font color="red", size=10><%= "#{@gluten_foods.join(", ")}" %></font>
   <% end %>
 
