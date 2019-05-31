@@ -1,22 +1,19 @@
-<center>
-<%=@food.name %>
-<p>
-price
-<%=@food.price %>
-<p>
-Protien
-<%=@food.protein %>
+<h2 class="rainbow"><%=@food.name %></h2>
+<br>
 
-<p>
-Calories
-<%=@food.calories %>
-<p>
-Contain Gluten? ->>
-<%=@food.gluten %>
+<h5 class="rainbow">Price</h5>
+<p><%=@food.price %></p>
 
+<h5 class="rainbow">Protein</h5>
+<p><%=@food.protein %></p>
 
-<h3><%= link_to "edit", "/recipes/#{@food.id}/edit" %></h3>
+<h5 class="rainbow">Calories</h5>
+<p><%=@food.calories %></p>
+<h5 class="rainbow">Contains Gluten?</h5>
+<p><%=@food.gluten %></p>
 
-<button type="button" class="btn btn-danger"><%= button_to  "delete", food_path,  method: :delete %></button>
+<div>
+<button type="button" class="btn btn-warning"><%= button_to "edit", "/foods/#{@food.id}/edit",  method: :get %></button>
 
-</center>
+<button type="button" class="btn btn-danger"><%= button_to "delete", food_path,  method: :delete %></button>
+</div>

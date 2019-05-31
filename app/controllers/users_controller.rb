@@ -5,13 +5,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-    @user = User.find(params[:id])
-    @user_recipes = []
-    @recipes = Recipe.find_by(user_id: params[:id])
-    @user_recipes << @recipes
-  end
-
   def new
     @user = User.new
   end
@@ -28,7 +21,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    @user_recipes = []
+    @recipes = Recipe.find_by(user_id: params[:id])
+    @user_recipes << @recipes
+  end
+
   def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
     if @user = User.create(user_params)
       session[:user_id] = @user.id
       redirect_to user_path(@user)
@@ -37,9 +41,6 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
-
-
 
   def destroy # DELETE request /users/:id
     @user = User.find(params[:id])

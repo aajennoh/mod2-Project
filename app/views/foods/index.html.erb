@@ -1,6 +1,7 @@
-<center>
+<h1 class="rainbow">List of Ingredients</h1>
+
+
 <% @foods.each do |food| %>
-<%=link_to food.name, "/foods/#{food.id}" %>
-<p>
+<p><%= link_to food.name, "/foods/#{food.id}" %></p>
 <%end%>
-</center>
+

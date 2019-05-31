@@ -1,34 +1,14 @@
-<style>
-  h1 {
-    text-shadow: 3px 3px hotpink;
-    color:rgba(100, 50, 255, .8);
-    font-family: 'Pacifico';
-    color: #fff400;
-    font-size: 100px;
-  }
-</style>
+<h1 class="recipe">Your Recipes</h1>
 
-<h1>Your Recipes</h1>
 
-<center>
-
-  <%if @recipes%>
+<div>
+<%if @recipes%>
   <% @user_recipes.each do |recipe| %>
   <%= link_to recipe.name, recipe_path(recipe) %>
   <% end %>
 <% end %>
-
-
-
-
-
-
-<br>
-<br>
-<br>
-
+<br><br><br>
 <% if current_user == @user %>
   <%= button_to 'Delete this Account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-
-</center>
+</div>

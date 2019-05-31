@@ -1,4 +1,6 @@
-<h1>Login</h1>
+<div class="rainbow">
+Login
+</div>
 <br>
 
 <h4><%= flash[:notice] %></h4>
@@ -8,12 +10,13 @@
 <%= form_tag(login_path) do %>
   <%= label_tag :username %>
   <p><%= text_field_tag :username %><p>
-
   <%= label_tag :password %>
   <p><%= password_field_tag :password %><p>
-
   <%= submit_tag "Login" %><br><br>
 <% end %>
-  <p>Not a Member?</p>
-  <p><%= button_to "Sign-up", new_user_path, method: :get %></p>
+
+<p class="rainbow">
+Not a Member?
+</p>
+<p><%= button_to "Sign-up", new_user_path, method: :get %></p>
 </div>

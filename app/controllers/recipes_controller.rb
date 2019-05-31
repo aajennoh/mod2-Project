@@ -10,32 +10,28 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(recipe_params)
-    
-    if session[:user_id]
-        @recipe.user_id = session[:user_id]
-        @recipe.save
-    redirect_to "/recipes/#{@recipe.id}"
-      # if @recipe.valid?
-      #   @recipe.save
-      #   redirect_to "/recipes/#{@recipe.id}"
-      # else
-      #   flash[:notice] = @recipe.errors.messages
-      #   redirect_to "/recipes/new"
-      # end
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.valid?
+      session[:user_id]
+      @recipe.user_id = session[:user_id]
+      @recipe.info_fill
+      @recipe.save
+      redirect_to "/recipes/#{@recipe.id}"
+    else
+       flash[:notice] = @recipe.errors.messages
+       redirect_to "/recipes/new"
     end
   end
 
   def budget
-    @recipes = Recipe.all
+    @recipes = Recipe.search(params[:search])
     see_the_items
+
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe.info_fill
     @gluten_foods = []
-
   end
 
   def edit
@@ -50,7 +46,11 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    Recipe.find(params[:id]).destroy
+    @recipe = Recipe.find(params[:id])
+    if cart.include?(@recipe.id)
+      cart - [@recipe.id]
+    end
+    @recipe.destroy
     redirect_to "/recipes"
 
   end
@@ -60,7 +60,7 @@ private
 
 def recipe_params
 
-params.require(:recipe).permit(:name, :description, :total_price, :total_protein, :total_calories, :user_id, :catagory, foods_attributes:[:name,:_destroy, :id] , food_ids:[])
+params.require(:recipe).permit(:name, :search, :description, :total_price, :total_protein, :total_calories, :user_id, :category, foods_attributes:[:name,:_destroy, :id] , food_ids:[])
 end
 
 
