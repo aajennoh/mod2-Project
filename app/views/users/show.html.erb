@@ -2,9 +2,10 @@
 
 
 <div>
-<%if @recipes%>
+<%if @user_recipes.length > 0%>
   <% @user_recipes.each do |recipe| %>
   <%= link_to recipe.name, recipe_path(recipe) %>
+  <br>
   <% end %>
 <% end %>
 <br><br><br>
