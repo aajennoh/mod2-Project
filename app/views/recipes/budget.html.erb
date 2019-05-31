@@ -9,17 +9,18 @@ Selected Recipes:
 <ol>
   <% @items.each do |item| %>
     <li><%= item.name %></li>
-     $ <%= item.total_price.to_f %>
+     $ <%= item.total_price %>
      <%= button_to "Delete From Cart", "/cart", {method: :delete, params: {recipe_id: item.id} } %>
   <% end %>
 </ol>
 
 
-<% @items.each do |item| %>
 <% counter = 0 %>
-<% item.total_price += counter %>
-<%= counter %>
+<% @items.each do |item| %>
+<% counter += item.total_price %>
 <% end %>
+<%= counter %>
+
 
 
 <hr>

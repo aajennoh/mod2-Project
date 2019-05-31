@@ -4,48 +4,39 @@
 
 
 <div>
-
-<!--
-
-  -->
-
-    <%= form_for @recipe do |f| %>
+  <%= form_for @recipe do |f| %>
     <%= f.label "Name" %>
-    <%= f.text_field :name %>
+    <p><%= f.text_field :name %></p>
     <br>
     <%= f.label "Description" %>
-    <%= f.text_area :description %>
-      <br>
-      <br>
-  category
-  <%= f.select :category, Category: ["breakfast", "snack", "dinner"], select: "Select" %>
-      <br>
-      <br>
-  <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
-  Quanity <%= number_field_tag "amount_1"%>
-  <br>
-  <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
-  Quanity<%= number_field_tag "amount_2"%>
-  <br>
+    <p><%= f.text_area :description %></p>
 
-  <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
- Quanity   <%= number_field_tag "amount_3"%>
-  <br>
-
-  <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
-  Quanity <%= number_field_tag "amount_4"%>
-  <br>
-
-  <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
-  Quanity <%= number_field_tag "amount_5"%>
-
-
-
-  <br>
-
-  <br>
-
+    <%= f.label "Category" %>
+    <p><%= f.select :category, Category: ["breakfast", "snack", "dinner"], select: "Select" %></p>
     <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    <%= f.label "Quantity" %>
+    <%= number_field_tag "amount_1"%>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    <%= f.label "Quantity" %>
+    <%= number_field_tag "amount_2"%>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    <%= f.label "Quantity" %>
+    <%= number_field_tag "amount_3"%>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    Quanity
+    <%= number_field_tag "amount_4"%>
+    <br>
+    <%= f.collection_select :food_ids, Food.all, :id, :name, {include_blank: 'Select an Ingredient'}, {:multiple => true}%>
+    Quanity
+    <%= number_field_tag "amount_5"%>
+
+  <br>
+  <br>
+  <br>
 
 
   <%= submit_tag "Submit"%>
@@ -54,9 +45,3 @@
 
 
 
-<style>
-input[type=text] {
-  border: 2px solid red;
-  border-radius: 4px;
-}
-</style>
