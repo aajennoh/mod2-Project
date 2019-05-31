@@ -7,22 +7,22 @@
 <p class="recipe">>Recipe Name</p>
 <p><%=@recipe.name %></p>
 
-<p ">Recipe Description</p>
+<p>Recipe Description</p>
 <p><%=@recipe.description %></p>
 
-<p >Recipe Category</p>
+<p>Recipe Category</p>
 <%=@recipe.category%>
 
-<p >Recipe Price</p>
+<p>Recipe Price</p>
 <p><%="$#{@recipe.total_price.round(2)}"%></p>
 
-<p >Recipe Protein</p>
+<p>Recipe Protein</p>
 <p><%=@recipe.total_protein %> grams</p>
 
 <p>Recipe Calories</p>
 <p><%=@recipe.total_calories %></p>
 
-<p ">Recipe Ingredients</p>
+<p>Recipe Ingredients</p>
 <p><%=@recipe.foods.map {|food| food.name}.join(", ")%></p>
 
 <% if @gluten_foods.length > 0 %>

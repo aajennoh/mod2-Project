@@ -37,7 +37,6 @@ end
 
 def self.search(search)
   if search
-    byebug
     budget = Recipe.select{|recipe| recipe.total_cost <= search.to_f}
     if budget.nil?
       budget = Recipe.all

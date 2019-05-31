@@ -1,34 +1,27 @@
-<center>
-
 <% if flash[:notice] %>
   <h3><%=flash[:notice]%></h3>
 <%end%>
 
 <%=form_for @food do |f|%>
-name
-<%=f.text_field :name%>
-<p>
-price
-<%=f.number_field :price, class: :text_field, step: :any%>
-<p>
-protein
-<%=f.number_field :protein%>
-<p>
-calories
-<%=f.number_field :calories%>
-<p>
-contains gluten?
-<%=f.check_box :gluten%>
-<p>
-<%=f.submit "create food"%>
+<p>Name</p>
+<p><%=f.text_field :name%></p>
+<p>Price</p>
+<p><%=f.number_field :price, class: :text_field, step: :any%></p>
+<p>Protein</p>
+<p><%=f.number_field :protein%></p>
+<p>Calories</p>
+<p><%=f.number_field :calories%></p>
+<p>Contains Gluten? <%=f.check_box :gluten%></p>
+<br>
+<p><%=f.submit "Create Ingredient"%></p>
 <%end%>
 
-</center>
-
-
-<!-- <form>
-  <input type=number step=1 /> Step 1 (default)<br />
-  <input type=number step=0.01 /> Step 0.01<br />
-  <input type=number step=any /> Step any<br />
-  <input type=range step=20 /> Step 20<br />
-</form> -->
+<style>
+input[type=text] {
+  border: 2px solid red;
+  border-radius: 4px;
+}
+input[type='checkbox']{
+  outline: 3px solid red;
+}
+  </style>
